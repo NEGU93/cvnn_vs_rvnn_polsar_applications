@@ -18,8 +18,9 @@ import {
   setDataSetMethod,
   setBalance,
 } from "../redux/slices/imagesSlice";
+import "../styles/SelectContainer.scss";
 
-const SelectModel = () => {
+const SelectContainer = () => {
   const {
     dataSet,
     model,
@@ -31,7 +32,7 @@ const SelectModel = () => {
   } = useSelector((state) => state.imagesReducer);
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="SelectContainer">
       <select
         name="dataSet"
         title="dataSet"
@@ -161,4 +162,4 @@ const SelectModel = () => {
   );
 };
 
-export default SelectModel;
+export default SelectContainer;

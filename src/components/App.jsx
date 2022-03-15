@@ -1,26 +1,24 @@
 import { useSelector } from "react-redux";
 import { getLink } from "../redux/slices/imagesSlice";
 import "../styles/App.scss";
-import SelectModel from "./SelectModel";
+import SelectContainer from "./SelectContainer";
 
 function App() {
   const imgLink = getLink(useSelector((state) => state.imagesReducer));
 
   return (
-    <div>
-      <h1>Title</h1>
+    <div className="App">
+      <div className="titleContainer">
+        <h1>Title</h1>
+      </div>
 
-      <SelectModel></SelectModel>
-      <div className="image">
+      <SelectContainer></SelectContainer>
+
+      <div className="imageContainer">
         <p>Image path</p>
         <p>{imgLink}</p>
       </div>
     </div>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <p>Holis</p>
-    //   </header>
-    // </div>
   );
 }
 
