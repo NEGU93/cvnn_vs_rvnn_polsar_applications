@@ -9,9 +9,15 @@
   padding: 1rem;
 
   & select {
+    border-radius: 4rem;
+    // border: solid 2px red;
+    // background-color: gray;
+    // color: white;
     margin: 0.5rem;
+    margin-bottom: 4rem;
     width: 19rem;
+    height: 2.1rem;
     text-align: center;
-    // height: 2rem;
+    cursor: pointer;
   }
 }

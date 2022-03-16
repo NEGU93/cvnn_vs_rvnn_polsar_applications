@@ -1,26 +1,29 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getDataSetImgLink } from "../redux/slices/imagesSlice";
+import { PNG_FILES_NAMES } from "../constants/constants";
 import "../styles/ImgConatiner.scss";
 
 const PngImgContainer = () => {
-  const imgLink = getDataSetImgLink(
+  const imgDataSet = getDataSetImgLink(
     useSelector((state) => state.imagesReducer.dataSet)
   );
-  console.log(imgLink);
-  return (
+  // console.log(imgDataSet);
+
+  return imgDataSet !== "" ? (
     <div className="pngImgContainer">
-      <div className="imageContainer">
-        <img
-          className="pngImg"
-          src="../assets/Flevoland/ground_truth.png"
-          alt=""
-        />
-      </div>
-      <div className="imageContainer">
-        <img className="pngImg" src="../assets/Flevoland/PauliRGB.png" alt="" />
-      </div>
+      {PNG_FILES_NAMES.map((file, key) => (
+        <div className="imageContainer" key={key}>
+          <img
+            className="pngImg"
+            src={`../assets/${imgDataSet}/${file}`}
+            alt=""
+          />
+        </div>
+      ))}
     </div>
+  ) : (
+    <h3 className="defaultText">" Select a Dataset to begin "</h3>
   );
 };
 

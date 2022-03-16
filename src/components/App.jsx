@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="titleContainer">
-        <h1>Title</h1>
+        <h1>CVNN vs RVNN PolSAR applications</h1>
       </div>
 
       <SelectContainer></SelectContainer>

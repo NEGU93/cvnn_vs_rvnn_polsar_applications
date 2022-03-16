@@ -24,7 +24,7 @@ export const { setDataSet, setModel, setInput } = imagesSlice.actions;
 
 export function getDataSetImgLink(dataSet) {
   const isOptionsSelected = dataSet !== "";
-  return isOptionsSelected ? `./${dataSet}` : "";
+  return isOptionsSelected ? `${dataSet}` : "";
 }
 
 export function getInputImgLink(props) {
@@ -32,7 +32,7 @@ export function getInputImgLink(props) {
 
   const { dataSet, model, input } = props;
 
-  return isOptionsSelected ? `./${dataSet}/${model}/${input}` : "";
+  return isOptionsSelected ? `${dataSet}/${model}/${input}` : "";
 }
 
 export default imagesSlice.reducer;

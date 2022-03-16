@@ -15,11 +15,9 @@ html {
 #root {
   display: flex;
   flex-direction: column;
-  // min-height: 100%;
 }
 
 body {
-  // height: 100%;
   background-color: $secondary_bg;
   color: $primary_font_color;
 }
