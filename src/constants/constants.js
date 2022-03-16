@@ -1,5 +1,12 @@
-export const DATASET_OPTIONS = ["SF-AIRSAR", "SF-R52", "OBER", "BRET"];
+export const DATASET_OPTIONS = [
+  "Flevoland",
+  "SF-AIRSAR",
+  "SF-R52",
+  "OBER",
+  "BRET",
+];
 export const MODEL_OPTIONS = [
+  "fcnn",
   "cao",
   "own",
   "zhang",
@@ -8,6 +15,7 @@ export const MODEL_OPTIONS = [
   "cnn",
   "mlp",
 ];
+export const INPUT_OPTIONS = ["coherency", "pauli"];
 export const DTYPE_OPTIONS = [
   "complex",
   "real_imag",
@@ -23,3 +31,10 @@ export const DATASET_METHOD_OPTIONS = [
   "single_separated_image",
 ];
 export const BALANCE_OPTIONS = ["none", "loss", "dataset"];
+export const HTML_FILES_NAMES = [
+  "box-test-acc",
+  "box-test-avg-acc",
+  "hist-test-acc",
+  "hist-test-avg-acc",
+  "plot-val-acc",
+];

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   DATASET_OPTIONS,
   MODEL_OPTIONS,
-  DTYPE_OPTIONS,
+  INPUT_OPTIONS,
 } from "../constants/constants";
 import { setDataSet, setModel, setInput } from "../redux/slices/imagesSlice";
 import "../styles/SelectContainer.scss";
@@ -60,7 +60,7 @@ const SelectContainer = () => {
         <option value="" disabled hidden>
           Select dataType
         </option>
-        {DTYPE_OPTIONS.map((item, key) => (
+        {INPUT_OPTIONS.map((item, key) => (
           <option value={item} key={key}>
             {item}
           </option>

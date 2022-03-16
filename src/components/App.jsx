@@ -14,7 +14,7 @@ function App() {
 
       <PngImgContainer></PngImgContainer>
 
-      {/* <HtmlImgComponent></HtmlImgComponent> */}
+      <HtmlImgComponent></HtmlImgComponent>
     </div>
   );
 }
