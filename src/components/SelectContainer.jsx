@@ -4,32 +4,12 @@ import {
   DATASET_OPTIONS,
   MODEL_OPTIONS,
   DTYPE_OPTIONS,
-  LIBRARY_OPTIONS,
-  DATASET_MODE_OPTIONS,
-  DATASET_METHOD_OPTIONS,
-  BALANCE_OPTIONS,
 } from "../constants/constants";
-import {
-  setDataSet,
-  setModel,
-  setDType,
-  setLibrary,
-  setDataSetMode,
-  setDataSetMethod,
-  setBalance,
-} from "../redux/slices/imagesSlice";
+import { setDataSet, setModel, setInput } from "../redux/slices/imagesSlice";
 import "../styles/SelectContainer.scss";
 
 const SelectContainer = () => {
-  const {
-    dataSet,
-    model,
-    dType,
-    library,
-    dataSetMode,
-    dataSetMethod,
-    balance,
-  } = useSelector((state) => state.imagesReducer);
+  const { dataSet, model, input } = useSelector((state) => state.imagesReducer);
   const dispatch = useDispatch();
   return (
     <div className="SelectContainer">
@@ -70,89 +50,17 @@ const SelectContainer = () => {
       </select>
 
       <select
-        name="dType"
-        title="dType"
-        value={dType}
+        name="input"
+        title="input"
+        value={input}
         onChange={(e) => {
-          dispatch(setDType(e.target.value));
+          dispatch(setInput(e.target.value));
         }}
       >
         <option value="" disabled hidden>
           Select dataType
         </option>
         {DTYPE_OPTIONS.map((item, key) => (
-          <option value={item} key={key}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="library"
-        title="library"
-        value={library}
-        onChange={(e) => {
-          dispatch(setLibrary(e.target.value));
-        }}
-      >
-        <option value="" disabled hidden>
-          Select library
-        </option>
-        {LIBRARY_OPTIONS.map((item, key) => (
-          <option value={item} key={key}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="dataSetMode"
-        title="dataSetMode"
-        value={dataSetMode}
-        onChange={(e) => {
-          dispatch(setDataSetMode(e.target.value));
-        }}
-      >
-        <option value="" disabled hidden>
-          Select dataSet Mode
-        </option>
-        {DATASET_MODE_OPTIONS.map((item, key) => (
-          <option value={item} key={key}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="dataSetMethod"
-        title="dataSetMethod"
-        value={dataSetMethod}
-        onChange={(e) => {
-          dispatch(setDataSetMethod(e.target.value));
-        }}
-      >
-        <option value="" disabled hidden>
-          Select dataSet Method
-        </option>
-        {DATASET_METHOD_OPTIONS.map((item, key) => (
-          <option value={item} key={key}>
-            {item}
-          </option>
-        ))}
-      </select>
-
-      <select
-        name="balance"
-        title="balance"
-        value={balance}
-        onChange={(e) => {
-          dispatch(setBalance(e.target.value));
-        }}
-      >
-        <option value="" disabled hidden>
-          Select balance
-        </option>
-        {BALANCE_OPTIONS.map((item, key) => (
           <option value={item} key={key}>
             {item}
           </option>

@@ -5,11 +5,7 @@ export const imagesSlice = createSlice({
   initialState: {
     dataSet: "",
     model: "",
-    dType: "",
-    library: "",
-    dataSetMode: "",
-    dataSetMethod: "",
-    balance: "",
+    input: "",
   },
   reducers: {
     setDataSet(state, action) {
@@ -18,51 +14,25 @@ export const imagesSlice = createSlice({
     setModel(state, action) {
       state.model = action.payload;
     },
-    setDType(state, action) {
-      state.dType = action.payload;
-    },
-
-    setLibrary(state, action) {
-      state.library = action.payload;
-    },
-    setDataSetMode(state, action) {
-      state.dataSetMode = action.payload;
-    },
-    setDataSetMethod(state, action) {
-      state.dataSetMethod = action.payload;
-    },
-    setBalance(state, action) {
-      state.balance = action.payload;
+    setInput(state, action) {
+      state.input = action.payload;
     },
   },
 });
 
-export const {
-  setDataSet,
-  setModel,
-  setDType,
-  setLibrary,
-  setDataSetMode,
-  setDataSetMethod,
-  setBalance,
-} = imagesSlice.actions;
+export const { setDataSet, setModel, setInput } = imagesSlice.actions;
 
-export function getLink(props) {
+export function getDataSetImgLink(dataSet) {
+  const isOptionsSelected = dataSet !== "";
+  return isOptionsSelected ? `./${dataSet}` : "";
+}
+
+export function getInputImgLink(props) {
   const isOptionsSelected = !Object.values(props).includes("");
 
-  const {
-    dataSet,
-    model,
-    dType,
-    library,
-    dataSetMode,
-    dataSetMethod,
-    balance,
-  } = props;
+  const { dataSet, model, input } = props;
 
-  return isOptionsSelected
-    ? `./${dataSet}/${model}/${dType}/${library}/${dataSetMode}/${dataSetMethod}/${balance}`
-    : "";
+  return isOptionsSelected ? `./${dataSet}/${model}/${input}` : "";
 }
 
 export default imagesSlice.reducer;

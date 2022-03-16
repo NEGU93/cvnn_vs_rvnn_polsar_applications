@@ -1,11 +1,9 @@
-import { useSelector } from "react-redux";
-import { getLink } from "../redux/slices/imagesSlice";
 import "../styles/App.scss";
+import HtmlImgComponent from "./HtmlImgContainer";
+import PngImgContainer from "./PngImgContainer";
 import SelectContainer from "./SelectContainer";
 
 function App() {
-  const imgLink = getLink(useSelector((state) => state.imagesReducer));
-
   return (
     <div className="App">
       <div className="titleContainer">
@@ -14,9 +12,14 @@ function App() {
 
       <SelectContainer></SelectContainer>
 
-      <div className="imageContainer">
-        <p>Image path</p>
-        <p>{imgLink}</p>
+      <div className="pngImgContainer">
+        <PngImgContainer></PngImgContainer>
+        <PngImgContainer></PngImgContainer>
+      </div>
+
+      <div className="htmlImgContainer">
+        <HtmlImgComponent></HtmlImgComponent>
+        <HtmlImgComponent></HtmlImgComponent>
       </div>
     </div>
   );
