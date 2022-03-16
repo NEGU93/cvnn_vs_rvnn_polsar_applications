@@ -12,15 +12,9 @@ function App() {
 
       <SelectContainer></SelectContainer>
 
-      <div className="pngImgContainer">
-        <PngImgContainer></PngImgContainer>
-        <PngImgContainer></PngImgContainer>
-      </div>
+      <PngImgContainer></PngImgContainer>
 
-      <div className="htmlImgContainer">
-        <HtmlImgComponent></HtmlImgComponent>
-        <HtmlImgComponent></HtmlImgComponent>
-      </div>
+      {/* <HtmlImgComponent></HtmlImgComponent> */}
     </div>
   );
 }
