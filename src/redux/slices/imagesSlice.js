@@ -4,23 +4,23 @@ export const imagesSlice = createSlice({
   name: "imagesReducer",
   initialState: {
     dataSet: "",
-    model: "",
-    input: "",
+    subset: "",
+    metric: "",
   },
   reducers: {
     setDataSet(state, action) {
       state.dataSet = action.payload;
     },
-    setModel(state, action) {
-      state.model = action.payload;
+    setSubset(state, action) {
+      state.subset = action.payload;
     },
-    setInput(state, action) {
-      state.input = action.payload;
+    setMetric(state, action) {
+      state.metric = action.payload;
     },
   },
 });
 
-export const { setDataSet, setModel, setInput } = imagesSlice.actions;
+export const { setDataSet, setSubset, setMetric } = imagesSlice.actions;
 
 export function getDataSetImgLink(dataSet) {
   const isOptionsSelected = dataSet !== "";
@@ -30,9 +30,9 @@ export function getDataSetImgLink(dataSet) {
 export function getInputImgLink(props) {
   const isOptionsSelected = !Object.values(props).includes("");
 
-  const { dataSet, model, input } = props;
+  const { dataSet, subset, metric } = props;
 
-  return isOptionsSelected ? `${dataSet}/${model}/${input}` : "";
+  return isOptionsSelected ? `${dataSet}/${subset}/${metric}` : "";
 }
 
 export default imagesSlice.reducer;

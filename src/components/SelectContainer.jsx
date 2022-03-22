@@ -2,14 +2,16 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   DATASET_OPTIONS,
-  MODEL_OPTIONS,
-  INPUT_OPTIONS,
+  SUBSET_OPTIONS,
+  METRIC_OPTIONS,
 } from "../constants/constants";
-import { setDataSet, setModel, setInput } from "../redux/slices/imagesSlice";
+import { setDataSet, setSubset, setMetric } from "../redux/slices/imagesSlice";
 import "../styles/SelectContainer.scss";
 
 const SelectContainer = () => {
-  const { dataSet, model, input } = useSelector((state) => state.imagesReducer);
+  const { dataSet, subset, metric } = useSelector(
+    (state) => state.imagesReducer
+  );
   const dispatch = useDispatch();
   return (
     <div className="SelectContainer">
@@ -32,17 +34,17 @@ const SelectContainer = () => {
       </select>
 
       <select
-        name="model"
-        title="model"
-        value={model}
+        name="subset"
+        title="subset"
+        value={subset}
         onChange={(e) => {
-          dispatch(setModel(e.target.value));
+          dispatch(setSubset(e.target.value));
         }}
       >
         <option value="" disabled hidden>
           Select model
         </option>
-        {MODEL_OPTIONS.map((item, key) => (
+        {SUBSET_OPTIONS.map((item, key) => (
           <option value={item} key={key}>
             {item}
           </option>
@@ -50,17 +52,17 @@ const SelectContainer = () => {
       </select>
 
       <select
-        name="input"
-        title="input"
-        value={input}
+        name="metric"
+        title="metric"
+        value={metric}
         onChange={(e) => {
-          dispatch(setInput(e.target.value));
+          dispatch(setMetric(e.target.value));
         }}
       >
         <option value="" disabled hidden>
           Select dataType
         </option>
-        {INPUT_OPTIONS.map((item, key) => (
+        {METRIC_OPTIONS.map((item, key) => (
           <option value={item} key={key}>
             {item}
           </option>
