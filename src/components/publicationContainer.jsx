@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { getInputImgLink } from "../redux/slices/imagesSlice";
+import { getDataSetImgLink } from "../redux/slices/imagesSlice";
 import { PUBLICATION_FILES } from "../constants/constants";
 
 const PublicationComponent = (props) => {
-    const dataset = getInputImgLink(useSelector((state) => state.imagesReducer)).split("/")[0];
-    console.log(dataset);
-    console.log(Boolean(dataset));
+    const dataset = getDataSetImgLink(
+        useSelector((state) => state.imagesReducer.dataSet)
+      );
     return Boolean(dataset) ? ( <div>
         <h2>{PUBLICATION_FILES[dataset]["year"]}</h2>
         <h2>{PUBLICATION_FILES[dataset]["authors"]}</h2>
