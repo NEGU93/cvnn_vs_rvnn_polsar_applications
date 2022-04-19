@@ -6,13 +6,13 @@ import "../styles/ImgConatiner.scss";
 
 const HtmlImgComponent = (props) => {
   const imgPath = getInputImgLink(useSelector((state) => state.imagesReducer));
-  console.log(imgPath);
   
   return imgPath !== "" ? (
     <Fragment>
-      {HTML_FILES_NAMES.map((file, key) => (
-        <div className="htmlImgContainer" key={key}>
-          <div className="imageContainer">
+      {HTML_FILES_NAMES.map((file, key) => {
+        if (!(file === "lines-plot.html" && imgPath.includes("test")) && (file != "per-class-bar.html" || !(imgPath.includes("loss") || imgPath.includes("average_accuracy") )))
+          return <div className="htmlImgContainer" key={key}>
+            <div className="imageContainer">
             <iframe
               className="htmlImg"
               id="inlineFrameExample"
@@ -20,11 +20,11 @@ const HtmlImgComponent = (props) => {
               width="100%"
               height="100%"
               frameBorder="0"
-              src={`../assets/${imgPath}/${file}`}
+              src={`/assets/${imgPath}/${file}`}
             ></iframe>
           </div>
         </div>
-      ))}
+      })}
     </Fragment>
   ) : (
     ""

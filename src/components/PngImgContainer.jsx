@@ -20,7 +20,8 @@ const PngImgContainer = () => {
             alt=""
           />
         </div>
-      ))}
+      )
+    )}
     </div>
   ) : (
     <h3 className="defaultText">" Select a Dataset to begin "</h3>
