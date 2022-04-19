@@ -7,4 +7,4 @@ export const HTML_FILES_NAMES = [
   "histogram.html",
   "violin-plot.html",
 ];
-export const PNG_FILES_NAMES = ["ground_truth.bmp", "PauliRGB.bmp"];
+export const PNG_FILES_NAMES = ["ground_truth.png", "PauliRGB.bmp"];

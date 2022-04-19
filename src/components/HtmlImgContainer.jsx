@@ -6,8 +6,8 @@ import "../styles/ImgConatiner.scss";
 
 const HtmlImgComponent = (props) => {
   const imgPath = getInputImgLink(useSelector((state) => state.imagesReducer));
-  // console.log(imgPath);
-
+  console.log(imgPath);
+  
   return imgPath !== "" ? (
     <Fragment>
       {HTML_FILES_NAMES.map((file, key) => (
