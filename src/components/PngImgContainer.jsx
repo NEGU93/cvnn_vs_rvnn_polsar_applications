@@ -16,7 +16,7 @@ const PngImgContainer = () => {
         <div className="imageContainer" key={key}>
           <img
             className="pngImg"
-            src={`/assets/${imgDataSet}/${file}`}
+            src={`${process.env.PUBLIC_URL}/assets/${imgDataSet}/${file}`}
             alt=""
           />
         </div>
