@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/cvnn_vs_rvnn_polsar_applications/static/css/main.8315cbb6.css",
-    "main.js": "/cvnn_vs_rvnn_polsar_applications/static/js/main.4bd5577d.js",
+    "main.js": "/cvnn_vs_rvnn_polsar_applications/static/js/main.87305a74.js",
     "index.html": "/cvnn_vs_rvnn_polsar_applications/index.html",
     "main.8315cbb6.css.map": "/cvnn_vs_rvnn_polsar_applications/static/css/main.8315cbb6.css.map",
-    "main.4bd5577d.js.map": "/cvnn_vs_rvnn_polsar_applications/static/js/main.4bd5577d.js.map"
+    "main.87305a74.js.map": "/cvnn_vs_rvnn_polsar_applications/static/js/main.87305a74.js.map"
   },
   "entrypoints": [
     "static/css/main.8315cbb6.css",
-    "static/js/main.4bd5577d.js"
+    "static/js/main.87305a74.js"
   ]
 }
